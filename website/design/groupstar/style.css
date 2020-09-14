@@ -1,0 +1,972 @@
+/* 
+	############# - INFO - #############
+	####################################
+
+	name: Groupstar;
+	author: Tom Aschmann;
+	version: 0.2;
+	description: Groupstar Design;
+	
+	####################################
+*/
+
+/* 
+	####################################
+		Root Design Start
+	####################################
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background: var(--maincolor);
+    color: #ffffff;
+}
+
+*::-moz-selection {
+    background: var(--maincolor);
+    color: #ffffff;
+}
+
+html,
+body {
+	font-size: 16px;
+}
+
+body {
+    background: var(--mainbackgroundcolor);
+    background-size: cover;
+}
+
+/* 
+	####################################
+		Root     Design Stop
+		Standart Design Start
+	####################################
+*/
+
+a {
+    color: #666666;
+    text-decoration: none;
+    border-bottom: 2.5px solid #f0f0f0;
+}
+
+h1 {
+    font-size: 1.5rem; 
+    font-weight: normal;
+}
+
+h2,
+h3 {
+    font-size: 1.2rem;
+	font-weight: normal;
+    text-align: center;
+}
+
+.message {
+    margin: 15px auto;
+    padding: 12px;
+    background-color: var(--maincolor);
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.message span:first-child {
+    margin-left: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.message span:first-child:hover {
+    color: var(--mainfontcolor);
+}
+
+label {
+	display: block;
+}
+
+input[type=text],
+input[type=textarea],
+input[type=search],
+input[type=password],
+input[type=tel],
+input[type=url],
+input[type=email],
+input[type=image],
+input[type=number],
+input[type=date],
+input[type=datetime-local],
+input[type=week],
+input[type=time],
+input[type=image],
+input[type=file],
+input[type=month],
+input[type=color],
+select,
+textarea {
+    width: 100%;
+    outline: 0;
+    margin-bottom: 1.4rem;
+    padding: 14px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid #ffffff 0px;
+	resize: none;
+	box-sizing: border-box;
+}
+
+textarea {
+    box-sizing: border-box;
+    resize: none;
+}
+
+input[type=image],
+input[type=file],
+input[type=color],
+input[type=submit],
+button,
+select {
+	cursor: pointer;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+	background-color: var(--maincolor);
+    text-align: center;
+    color: #fff;
+    height: 50px;
+    border: 0;
+    border-radius: 3px;
+	padding: 7px;
+	margin: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: block;
+	float: left;
+	margin-right: -2rem;
+	opacity: 0;
+	width: 1rem;
+	z-index: -1;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 300;
+	padding-left: 2.4rem;
+	padding-right: 0.75rem;
+	position: relative;
+	margin-bottom: 0;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+	border-radius: 4px;
+	border: solid 1px;
+	content: '';
+	display: inline-block;
+	height: 1.6rem;
+	left: 0;
+	line-height: 1.58125rem;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 1.6rem;
+	text-transform: none !important;
+	border-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"] + label:before {
+	border-radius: 4px;
+}
+
+input[type="radio"] + label:before {
+	border-radius: 100%;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+	background-color: var(--maincolor);
+	border-color: var(--maincolor);
+	color: #ffffff;
+	content: '✓';
+}
+
+hr {
+    height: 2px;
+    background-color: #d0d0d0;
+    border: 0;
+}
+
+/* 
+	####################################
+		Standart Design Stop
+		Header   Design Start
+	####################################
+*/
+
+header {
+    width: 100%; 
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 42; 
+    border-bottom: 3px solid #e5e5e5;
+    line-height: 80px; 
+    background-color: #16a085; 
+	color: var(--mainbackgroundcolor)
+}
+
+header section a h2 {
+    font-weight: normal;
+	font-size: 2rem;
+    color: var(--mainbackgroundcolor); 
+    float: left;
+}
+
+header section span {
+    position: relative;
+    top: 16px; 
+    left: -6px; 
+    color: var(--mainbackgroundcolor); 
+    font-weight: 100; 
+    font-size: 0.62rem; 
+}
+
+header nav ul {
+    position: absolute;
+    right: 0;
+    height: 80px; 
+    top: 0px; 
+    text-align: right; 
+    font-size: 0.75rem; 
+    border-left: 1px solid rgba(255, 255, 255, 0.6); 
+}
+
+header nav ul li a {
+    position: relative;
+    float: left; 
+    height: 80px; 
+	min-width: 60px;
+    top: 0px;
+    padding: 0px 8px; 
+    line-height: 80px; 
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+	text-align: center;
+	color: #fbfbfb;
+}
+
+header nav ul li {
+	text-decoration: none;
+	list-style: none;
+	position: relative;
+    float: left;
+	top: 0;
+}
+
+header nav ul li:last-child {
+    background-color: #0984e3; 
+    font-size: 1.866rem;
+    font-weight: normal;
+}
+
+header nav ul li {
+    color: #ffffff;
+    border-right: 1.5px solid #ffffff; 
+    text-decoration: none;
+    border: 0; 
+}
+
+/* 
+	####################################
+		Header Design Stop
+		Main   Design Start
+	####################################
+*/
+
+article {
+    margin-top: 85px; 
+	padding-top: 20px;
+}
+
+section {
+    width: 96%;
+    max-width: 880px; 
+    margin: 0 auto; 
+}
+
+article section form.single {
+    margin: 0 auto; 
+    border-radius: 4px;
+    overflow: hidden;
+    height: 48px; 
+    margin-bottom: 10px; 
+}
+
+article section form.single input[type=search],
+article section form.single input[type=text],
+article section form.single input[type=email]{
+    width: calc(86% - 16px); 
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding-left: 8px; 
+    border: 0; 
+    background-color: #fbfbfb; 
+    float: left;
+    position: relative;
+	user-select: none;
+}
+
+article section form.single button,
+article section form.single button {
+    z-index: 2; 
+    width: calc(14% + 6px);  
+    position: relative;
+    border: 0;
+    padding: 0; 
+    border-radius: 0; 
+    color: #ffffff;
+    background-color: var(--maincolor); 
+    height: 48px; 
+	cursor: pointer;
+	margin: 0;
+}
+
+article section form#search button {
+    background-image: url(icon/lupe.png);
+    background-position: center;
+    background-size: 30px; 
+    background-repeat: no-repeat;
+}
+
+form {
+	background-color: #efefef;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+article section nav:first-of-type {
+    width: calc(96% - 10px);
+    padding-left: 10px; 
+    font-size: 0.7rem;  
+    margin: 0 auto; 
+    border-radius: 4px; 
+    max-width: 826px; 
+    height: 40px; 
+    margin-bottom: 20px; 
+    background-color: #fbfbfb; 
+    line-height: 40px; 
+    color: #777777;
+    text-align: center;
+    clear: both;
+}
+
+article section nav:first-of-type span:first-of-type {
+    margin-right: 10px; 
+}
+
+article section nav:first-of-type form label span {
+    border: 0; 
+    padding: 4px 6px; 
+    border-radius: 2px; 
+    color: #777777;
+    margin-left: 2px; 
+    margin-right: 2px; 
+    background-color: #f0f0f0;
+	user-select: none;
+	cursor: pointer;
+}
+
+main {
+    width: 90%;
+    max-width: 900px; 
+    margin: 0 auto; 
+    margin-top: -10px;
+    position: relative; 
+}
+
+article section main div[id^=group] {
+    width: 28%; 
+    padding: 1.5%; 
+    padding-bottom: 60px; 
+    border-radius: 2px; 
+    background-color: #fafafa; 
+    float: left; 
+    word-wrap: break-word;
+    overflow: hidden; 
+    margin: 1%; 
+    position: relative;
+	height: 170px;
+}
+
+article section main div[id^=group] a h3 {
+    font-size: 1.2rem; 
+    font-weight: 100; 
+    margin: 0; 
+    text-align: center;
+    margin-bottom: 12px; 
+}
+
+article section main div[id^=group] hr {
+    width: 60%;
+    margin: 0 auto;
+    height: 2px;
+    background-color: #f0f0f0;
+    border: 0;
+}
+
+article section main div[id^=group] p:first-of-type {
+    font-size: 0.8rem; 
+    text-align: center;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+article section main div[id^=group] p:first-of-type a {
+    opacity: 0.9; 
+    border-bottom: none;
+}
+
+article section main div[id^=group] aside {
+    text-align: center;
+    margin-bottom: 4px; 
+}
+
+article section main div[id^=group] aside .categorie {
+    font-size: 0.65rem;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 2px 8px; 
+    border: 0;
+    border-radius: 2px; 
+    color: #888888;
+}
+article section main div[id^=group] aside span:nth-child(1) {
+	cursor: pointer;
+}
+
+article section main div[id^=group] aside span:nth-child(1),
+article section main div[id^=group] aside span:nth-child(2),
+article section main div[id^=group] aside span:nth-child(3){
+    font-size: 0.65rem;
+    padding: 2px 8px; 
+    color: #888888;
+    border-radius: 2px; 
+    background-color: rgba(230, 230, 230, 0.6);
+	user-select: none;
+}
+
+article section main div[id^=group] aside span:nth-child(4) {
+    position: relative;
+    text-align: center;
+    margin: 0 auto; 
+    margin-top: 2px;
+    font-weight: 100;
+    font-size: 0.65rem; 
+    text-decoration: none;
+    margin-bottom: 2px; 
+    color: #c9c9c9;
+	display: block;
+}
+
+article section main div[id^=group] div:last-of-type {
+    position: absolute;
+    bottom: 0; 
+    width: 100%; 
+    height: 50px; 
+    line-height: 50px; 
+    color: #ffffff; 
+    text-align: center;
+    background-color: #16a085; 
+    left: 0; 
+}
+
+label[for^=inputVote] {
+	cursor: pointer;
+	font-size: 3rem;
+	display: unset;
+	user-select: none;
+}
+
+label[for^=inputVote]:last-of-type {
+	float: right;
+}
+
+article section:last-of-type > a:nth-child(1) div {
+    width: 96%; 
+    max-width: 800px;  
+    margin: 0 auto; 
+    height: 50px; 
+    line-height: 50px; 
+    border-radius: 4px; 
+    margin-top: 40px; 
+    background-color: var(--maincolor); 
+    color: #ffffff; 
+    text-align: center;
+    clear: both;
+    margin-bottom: 10px; 
+    font-size: 0.75rem; 
+	z-index: -1;
+	cursor: pointer;
+}
+
+article section:last-of-type > a:nth-child(2) div {
+    width: calc(96% - 22px);
+    max-width: 776px;  
+    margin: 0 auto; 
+    padding: 10px; 
+    line-height: 24px; 
+    text-align: center;
+    background-color: #f1f1f1; 
+    position: relative;
+    color: var(--mainfontcolor);
+    font-weight: 100;
+    border-radius: 4px; 
+    margin-top: 10px; 
+    opacity: 0.6; 
+    font-size: 0.75rem; 
+	cursor: pointer;
+}
+
+/* 
+	####################################
+		Main   Design Stop
+		Footer Design Start
+	####################################
+*/
+
+footer {
+    width: 90%; 
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.7rem; 
+    margin-top: 30px; 
+    color: #b3b3b3;
+    line-height: 30px;
+    margin-bottom: 120px; 
+}
+
+footer li {
+	display: inline-block;
+}
+
+footer li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin-left: 3px; 
+    margin-right: 3px; 
+}
+
+footer p:first-of-type {
+    width: 96%; 
+    max-width: 500px; 
+    margin: 0 auto; 
+    text-align: center;
+    margin-top: 40px; 
+    font-size: 0.7rem; 
+    color: #b6b6b6;
+}
+
+/* Single */ 
+#single_description {
+    font-weight: 400; 
+}
+
+#single {
+    width: calc(96% - 20px); 
+    background-color: #fbfbfb; 
+    padding: 10px; 
+    position: relative;
+    margin: 0 auto; 
+    padding-bottom: 64px; 
+    border-radius: 6px; 
+    overflow: hidden;
+}
+
+#single #title {
+    width: 100%; 
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+#single #sepperate_line {
+    width: 60%; 
+    margin: 0 auto; 
+    border: 0;
+    height: 2px; 
+    background-color: #f1f1f1; 
+}
+
+#single #description {
+    width: 86%; 
+    margin: 0 auto; 
+    margin-top: 20px; 
+    text-align: center;
+    font-size: 2.25rem; 
+    font-weight: 100; 
+    margin-bottom: 10px; 
+    color: var(--mainfontcolor);
+}
+
+#single #description a{
+    border: 0
+}
+
+#single aside {
+    text-align: center;
+    margin-bottom: 4px; 
+}
+
+#single .categorie {
+    font-size: 0.6rem;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 2px 8px; 
+    border: 0;
+    border-radius: 2px; 
+    color: #888888;
+}
+
+#single span:nth-child(1) {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    color: #888888;
+    border-radius: 2px; 
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+#single #timeago {
+    text-align: center;
+    width: 100%; 
+    font-size: 0.75rem; 
+    font-weight: 100; 
+    opacity: 0.6; 
+    margin-top: 10px; 
+}
+
+#single #join {
+    height: 50px; 
+    width: 100%; 
+    position: absolute;
+    bottom: 0px; 
+    text-align: center;
+    line-height: 50px; 
+    left: 0px; 
+    background-color: #16a085; 
+}
+
+#single #join_a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#share {
+    width: 90%; 
+    margin: 0 auto; 
+    margin-top: 30px; 
+}
+
+#share #share_why {
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 0.75rem;
+}
+
+#share #buttons {
+    width: 100%;
+    position: relative;
+    margin-top: 20px; 
+}
+
+#share #buttons .button {
+    width: 22%; 
+    margin-left: 1.5%; 
+    margin-right: 1.5%; 
+    height: 40px; 
+    float: left;
+    border-radius: 4px; 
+    cursor: pointer !important;
+    background-color: blue; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#share #buttons a {
+    text-decoration: none;
+    border: 0 !important;
+}
+
+#share #buttons .twitter {
+    background-color: #28a9e2; 
+    background-size: 30px; 
+    background-image: url(icon/social/twitter.jpg); 
+}
+
+#share #buttons .facebook {
+    background-color: #395797; 
+    background-size: 30px; 
+    background-image: url(icon/social/facebook.png); 
+}
+
+#share #buttons .tumblr {
+    background-color: #36465d; 
+    background-size: 30px; 
+    background-image: url(icon/social/tumblr.png); 
+}
+
+#share #buttons .whatsapp {
+    background-color: #25d366; 
+    background-size: 40px; 
+    background-image: url(icon/social/whatsapp.png); 
+}
+
+#sharethelink {
+    width: 94.5%; 
+    padding-left: 2%; 
+    margin: 0 auto; 
+    margin-top: 10px; 
+    position: relative;
+    left: 1.5%; 
+    border: 1px solid #e5e5e5; 
+    height: 40px; 
+    background-color: #fbfbfb; 
+    border-radius: 4px;
+}
+
+.options {
+    margin: 0 auto; 
+    margin-top: 60px; 
+    text-align: center;
+    max-width: 700px; 
+}
+
+.options .pls_report {
+    margin-bottom: 30px;
+    font-size: 0.65rem; 
+    color: #636363;
+}
+
+.options #backtoall {
+    width: 96%; 
+    margin: 0 auto; 
+    max-width: 500px; 
+    text-align: center;
+    margin-top: 10px; 
+    padding: 20px 0px; 
+    color: #636363;
+    border-radius: 6px; 
+    background-color: #f5f5f5; 
+    border: 1px solid #ebebeb;
+}
+
+.options .report {
+    border-color: #ffc5cb !important;  
+    background-color: #ffebee !important; 
+}
+
+.options #backtoall_a {
+    color: #636363;
+    text-decoration: none;
+    border: 0; 
+}
+
+#categories {
+    border-top: 2;
+    max-width: 900px;
+    min-height: 70px; 
+    margin: 0 auto;
+    line-height: 34px; 
+    text-align: center;
+    margin-bottom: 0px; 
+    border-top: 2px solid #f4f4f4; 
+}
+
+#categories .one_cat {
+    width: 47%;
+    margin: 1.5%;
+    padding-top: 20px;  
+    height: 78px; 
+    line-height: 26px; 
+    background-color: #fbfbfb;
+    position: relative;
+    font-weight: 400;
+    border-radius: 4px; 
+    float: left;
+    color: #444444;
+}
+
+#categories .one_cat .icon {
+    width: 30px; 
+    height: 30px; 
+    clear: both;
+    float: none;
+    opacity: 0.4; 
+}
+
+#categories a {
+    color: #636363;
+    border: 0; 
+    text-decoration: none !important;
+}
+
+/* 
+	####################################
+		Footer Design Stop
+		@media Design Start
+	####################################
+*/
+
+@media (max-width: 880px) {
+
+    header {
+        height: 60px; 
+        line-height: 60px; 
+    }
+	
+	header nav ul {
+		height: 60px; 
+		font-size: 0.6rem; 
+		right: 0;
+        position: absolute;
+	}
+	
+	header nav ul li {
+		width: auto;
+	}
+
+	header nav ul li a {
+		height: 60px;
+		line-height: 60px; 
+		padding: 0;
+	}
+
+	header nav ul li:last-child {
+		font-size: 1.565rem; 
+	}
+
+    header section a h2 {
+        font-size: 1.7rem; 
+        left: 10px; 
+    }
+	
+	article {
+		margin-top: 70px; 
+	}
+
+    article section main div[id^=group] {
+        width: 45%; 
+        padding: 1.5%; 
+        margin: 1%; 
+        margin-bottom: 20px; 
+        padding-bottom: 106px; 
+    }
+
+    #categories {
+        min-height: 100px; 
+    }
+
+}
+
+@media (max-width: 500px) {
+	
+    header section span:first-of-type {
+        top: 16px; 
+        left: -12px; 
+        font-size: 0.55rem; 
+    }
+
+    header section a h2 {
+        font-size: 1.25rem; 
+        left: 10px; 
+    }
+
+    article section:last-of-type > a:nth-child(2) div {
+        line-height: 20px;
+        padding-top: 14px; 
+        padding-bottom: 14px; 
+    }
+
+    article section main div[id^=group] {
+        width: 95%; 
+        padding: 1.5%;
+        padding-top: 20px; 
+        padding-bottom: 106px; 
+    }
+
+    article section nav:first-of-type a {
+        padding: 4px 3px; 
+    }
+
+    #categories {
+        min-height: 140px; 
+    }
+
+}
+
+@media (max-width: 400px) {
+	
+	header section a h2 {
+        font-size: 1.25rem; 
+        left: 8px; 
+    }
+	
+}
+
+@media (max-width: 340px) {
+
+    header section span:first-of-type {
+        display: none;
+    }
+
+}
+
+@media (max-width: 295px) {
+	
+	header section a h2 {
+        font-size: 1rem; 
+        left: 5px; 
+    }
+	
+	html,
+	body {
+		font-size: 14px;
+	}
+	
+}
+
+@media (max-width: 275px) {
+	
+	header section a h2 {
+        font-size: 0.8rem; 
+        left: 3px; 
+    }
+	
+}
+
+@media (max-width: 250px) {
+	
+	header section a h2 {
+        display: none; 
+    }
+	
+}
+
+/* 
+	####################################
+		@media Design Stop
+	####################################
+*/
