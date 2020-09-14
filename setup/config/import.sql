@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `option` (
   UNIQUE (`option_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `option` (`option_id`, `option_name`, `option_value`) VALUES
+INSERT IGNORE INTO `option` (`option_id`, `option_name`, `option_value`) VALUES
 	(1, 'siteurl', ''),
 	(2, 'sitename', ''),
 	(3, 'sitedescription', ''),
