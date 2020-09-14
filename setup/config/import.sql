@@ -41,8 +41,32 @@ CREATE TABLE IF NOT EXISTS `Statistiken` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS `faq` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `question` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `questiondate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8_unicode_ci,
+  `answerdate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `group` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `invite` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `age` int,
+  `date` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `join` int COLLATE utf8_unicode_ci DEFAULT NULL,
+  `joindate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `vote` int,
+  PRIMARY KEY (`id`), UNIQUE (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS `option` (
-  `option_id` bigint(20) UNSIGNED NOT NULL,
+  `option_id` int(10) UNSIGNED NOT NULL,
   `option_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `option_value` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -72,26 +96,3 @@ INSERT IGNORE INTO `option` (`option_id`, `option_name`, `option_value`) VALUES
 	(20, 'language', ''),
 	(21, 'version', '1.0'),
 	(22, 'fontname', '');
-
-CREATE TABLE IF NOT EXISTS `faq` (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `question` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `questiondate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `answer` text COLLATE utf8_unicode_ci,
-  `answerdate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE IF NOT EXISTS `group` (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `invite` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `category` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `age` int,
-  `date` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `join` int COLLATE utf8_unicode_ci DEFAULT NULL,
-  `joindate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `vote` int,
-  PRIMARY KEY (`id`), UNIQUE (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
