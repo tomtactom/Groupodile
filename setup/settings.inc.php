@@ -5,7 +5,6 @@
 
 	//Hier muss der ganze PHP code hin
 	if(isset($_POST['register'])) {
-		echo 'hat geklappt';
 		$error = false;
 		$vorname = trim($_POST['vorname']);
 		$nachname = trim($_POST['nachname']);
