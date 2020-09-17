@@ -52,7 +52,7 @@
 				<?php } else { ?>
 					<a href="index.php">Abbrechen</a>
 					<input type="hidden" name="nextStep" value="settings">
-					<button type="submit" name="register">Account erstellen</button>
+					<button type="submit" name="register" value="1">Account erstellen</button>
 				<?php } ?>
 			</form>
 		</section>
