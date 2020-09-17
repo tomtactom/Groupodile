@@ -17,9 +17,9 @@
 		if(isset($setup)) {
 			$role = 'adminstrator';
 		}
-		
+
 		if(empty($vorname) || empty($nachname) || empty($email) || empty($birthday) || empty($gender) || empty($role) || empty($username)) {
-			$error_msg = 'Bitte alle Felder mit * ausfüllen';
+			$error_msg = 'Bitte alle Felder mit * ausfüllen'.$vorname.$nachname.$email.$birthday.$gender.$role.$username;
 			$error = true;
 		}
 		if(strlen($vorname) > 32 || strlen($nachname) > 32 || strlen($email) > 255 || strlen($username) > 32 || (!empty($biography) && strlen($biography) > 255)) {
@@ -37,7 +37,7 @@
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$error_msg = 'Bitte eine gültige E-Mail-Adresse eingeben';
 			$error = true;
-		} 	
+		}
 		if(strlen($passwort) == 0) {
 			$error_msg = 'Bitte ein Passwort angeben';
 			$error = true;
@@ -60,23 +60,23 @@
 		}
 		if ($role != 'user' && $role != 'member' && $role != 'supporter' && $role != 'manager' && $role != 'adminstrator') {
 			$error_msg = 'Bitte wähle alle Rollen Auswahlfelder aus';
-			$error= true;	
+			$error= true;
 		}
 		if ($gender != 'male' && $gender != 'female' && $gender != 'other' && $gender != 'noinformation') {
 			$error_msg = 'Bitte wähle alle Geschlechts Auswahlfelder aus';
-			$error= true;	
+			$error= true;
 		}
-		
+
 		//Überprüfe, dass die E-Mail-Adresse und der Benutzername noch nicht registriert wurden
-		if(!$error) { 
+		if(!$error) {
 			$statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 			$result = $statement->execute(array('email' => $email));
 			$user = $statement->fetch();
-			
+
 			$username_statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
 			$username_result = $username_statement->execute(array('username' => $username));
 			$username_user = $username_statement->fetch();
-			
+
 			if($user !== false) {
 				$error_msg = 'Diese E-Mail-Adresse ist bereits vergeben<br>';
 				$error = true;
@@ -84,9 +84,9 @@
 			if($username_user !== false) {
 				$error_msg = 'Dieser Benutzername ist bereits vergeben<br>';
 				$error = true;
-			}	
+			}
 		}
-		
+
 		//Überprüfe ob das Geburtsdatum gültig ist
 		if ($birthday > date("Y-m-d")) {
 			$error_msg = 'Das Geburtsdatum ist ungültig (<i>YYYY-MM-DD</i>)';
@@ -98,7 +98,7 @@
 				$min = strtotime("-".'16'." years"); // aktueller Timestamp abzüglich $mindestalter Jahre
 				$geb = mktime(0, 0, 0, $var[1], $var[2], $var[0]); // Timestamp des angegebenen Geburtsdatums
 				if($min >= $geb) { // ist der Timestamp abzüglich $mindestalter Jahre grösser oder gleichgross als der Timestamp des Geburtsdatums
-				
+
 				} else {
 					$date = false;
 					$error_msg = 'Du musst mindestens 16 Jahre alt sein.';
@@ -106,13 +106,13 @@
 				}
 			}
 		}
-		
+
 		//Keine Fehler, wir können den Nutzer registrieren
-		if(!$error) {	
+		if(!$error) {
 			$passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 			$statement = $pdo->prepare("INSERT INTO users (email, passwort, vorname, nachname, biography, birthday, gender, username, role) VALUES (:email, :passwort, :vorname, :nachname, :biography, :birthday, :gender, :username, :role)");
 			$result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash, 'vorname' => $vorname, 'nachname' => $nachname, 'biography' => $biography, 'birthday' => $birthday, 'gender' => $gender, 'username' => $username, 'role' => $role));
-		$success_msg = 'Du wurdest erfolgreich als Administrator angelegt';	
+		$success_msg = 'Du wurdest erfolgreich als Administrator angelegt';
 		$goToNextStep = true;
 		}
 	}
