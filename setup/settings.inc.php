@@ -1,4 +1,4 @@
-<?php print_r($_POST) ?>
+<?php print_r($_POST['register']); // Keine Ahnung warum, aber das muss hier stehen, damit es klappt... ?>
 <?php
 
 	include("helper.inc.php");
