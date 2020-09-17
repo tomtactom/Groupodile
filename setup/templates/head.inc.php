@@ -9,17 +9,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 	<style>
 		:root {
-			--maincolor: #74b9ff;
-			--mainfontcolor: #2d3436;
-			--mainbackgroundcolor: #edf0f1;
-			--mainhovercolor: #0984e3;
+			--maincolor: #009688;
+			--mainfontcolor: #0f0f0f;
+			--mainbackgroundcolor: #ffffff;
+			--mainhovercolor: #00ad9d;
 		}
 		html,
-		body { 
-			font-family: sans-serif; 
+		body {
+			font-family: sans-serif;
 		}
 	</style>
-	<title>LupusGUI Installation</title>
+	<title>Groupodile Installation</title>
 	<meta name="description" content="Der Installationsmanager leitet dich durch den Vorgang.">
 	<link rel="apple-touch-icon" sizes="57x57" href="../include/images/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../include/images/apple-icon-60x60.png">
@@ -38,4 +38,3 @@
 	<meta name="msapplication-TileImage" content="../include/images/ms-icon-144x144.png">
 	<link rel="stylesheet" href="../backend/design/cleanlupus/style.css">
 </head>
-	

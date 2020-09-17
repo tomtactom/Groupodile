@@ -11,22 +11,22 @@
 					display: block;
 				}
 			</style>
-				<label for="inputSiteurl">Website URL: 
+				<label for="inputSiteurl">Website URL:
 					<input type="url" id="inputSiteurl" name="siteurl" minlength="12" maxlength="255" required>
 				</label>
-				<label for="inputSitename">Website Name: 
-					<input type="text" id="inputSitename" name="sitename" maxlength="255" required>
+				<label for="inputSitename">Website Name:
+					<input type="text" id="inputSitename" name="sitename" maxlength="255" value="Groupodile" required>
 				</label>
-				<label for="inputSitedescription">Website Beschreibung: 
-					<input type="text" id="inputSitedescription" name="sitedescription" minlength="12" maxlength="255" required>
+				<label for="inputSitedescription">Website Beschreibung:
+					<input type="text" id="inputSitedescription" name="sitedescription" minlength="12" maxlength="255" value="Entdecke neue WhatsApp Gruppen, die nach Kategorien sortiert sind und trete ihnen bei. Oder veröffentliche ganz einfach deine eigene WhatsApp Gruppe." required>
 				</label>
-				<label for="inputKeywordsmain">Hauptschlagwörter: 
-					<input type="text" id="inputKeywordsmain" name="keywordsmain" minlength="3" maxlength="255" required>
+				<label for="inputKeywordsmain">Hauptschlagwörter:
+					<input type="text" id="inputKeywordsmain" name="keywordsmain" minlength="3" maxlength="255" value="WhatsApp Gruppen, WhatsApp Gruppen finden, Groupodile" required>
 				</label>
-				<label for="inputAdminemail">Adminstrator E-Mail: 
+				<label for="inputAdminemail">Adminstrator E-Mail:
 					<input type="email" id="inputAdminemail" name="adminemail" minlength="6" maxlength="255" required>
 				</label>
-				<label for="inputCountry">Land: 
+				<label for="inputCountry">Land:
 					<select id="inputCountry" name="country" required>
 						<option value="germany">Deutschland</option>
 						<option value="austria">Österreich</option>
@@ -41,13 +41,13 @@
 						<option value="ireland">Irland</option>
 					</select>
 				</label>
-				<label for="inputLanguage">Sprache: 
+				<label for="inputLanguage">Sprache:
 					<select id="inputLanguage" name="language" required>
 						<option value="german">Deutsch</option>
 						<option value="english">Englisch</option>
 					</select>
 				</label>
-				<label for="inputRobots">Suchmaschienen Indexierung: 
+				<label for="inputRobots">Suchmaschienen Indexierung:
 					<select id="inputRobots" name="robots" required>
 						<option value="0">In Suchmaschienen nicht Indexieren</option>
 						<option value="1">In Suchmaschienen Indexieren</option>
@@ -60,7 +60,7 @@
 					</select>
 				</label>
 
-				<label for="inputBackenddesign">Backend Design: 
+				<label for="inputBackenddesign">Backend Design:
 					<select id="inputBackenddesign" name="backenddesign" required>
 						<?php
 							$verzeichnis_design = "../backend/design/";
@@ -80,7 +80,7 @@
 						<option value="none">Kein Design</option>
 					</select>
 				</label>
-				<label for="inputFrontenddesign">Frontend Design: 
+				<label for="inputFrontenddesign">Frontend Design:
 					<select id="inputFrontenddesign" name="frontenddesign" required>
 						<?php
 							$verzeichnis_frontenddesign = "../website/design/";
@@ -101,7 +101,7 @@
 					</select>
 				</label>
 
-				<label for="inputFont">Schriftart: 
+				<label for="inputFont">Schriftart:
 					<select id="inputFont" name="font" required>
 						<?php
 							$verzeichnis_font = "../include/database/fonts/";
@@ -121,40 +121,40 @@
 						<option value="none">Keine Schriftart</option>
 					</select>
 				</label>
-				
-				<label for="inputFontname">Schriftname: 
-					<input type="text" id="inputFontname" name="fontname" maxlength="32">
+
+				<label for="inputFontname">Schriftname:
+					<input type="text" id="inputFontname" name="fontname" value="spinnaker" maxlength="32">
 				</label>
 
-				<label for="inputMaincolor">Hauptfarbe: 
-					<input type="color" id="inputMaincolor" name="maincolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+				<label for="inputMaincolor">Hauptfarbe:
+					<input type="color" id="inputMaincolor" name="maincolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" value="#009688" required>
 				</label>
 
-				<label for="inputMainfontcolor">Haupt Schriftfarbe: 
-					<input type="color" id="inputMainfontcolor" name="mainfontcolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+				<label for="inputMainfontcolor">Haupt Schriftfarbe:
+					<input type="color" id="inputMainfontcolor" name="mainfontcolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" value="#0f0f0f" required>
 				</label>
 
-				<label for="inputMainbackgroundcolor">Haupt Hintergrundfarbe: 
-					<input type="color" id="inputMainbackgroundcolor" name="mainbackgroundcolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+				<label for="inputMainbackgroundcolor">Haupt Hintergrundfarbe:
+					<input type="color" id="inputMainbackgroundcolor" name="mainbackgroundcolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" value="#ffffff" required>
 				</label>
 
-				<label for="inputMainhovercolor">Haupt hover Farbe: 
-					<input type="color" id="inputMainhovercolor" name="mainhovercolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+				<label for="inputMainhovercolor">Haupt hover Farbe:
+					<input type="color" id="inputMainhovercolor" name="mainhovercolor" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" value="#00ad9d" required>
 				</label>
 
-				<label for="inputAuthor">Author Name/Copyright: 
+				<label for="inputAuthor">Author Name/Copyright:
 					<input type="text" id="inputAuthor" name="author" maxlength="255"  required>
 				</label>
 
-				<label for="inputMindestalter">Mindestalter: 
+				<label for="inputMindestalter">Mindestalter:
 					<input type="number" id="inputMindestalter" name="mindestalter" pattern="/[0-9]$/" required>
 				</label>
 
-				<label for="inputMainrole">Standartrolle: 
+				<label for="inputMainrole">Standartrolle:
 					<select id="inputMainrole" name="mainrole" required>
 						<option value="user">Benutzer</option>
 						<option value="member">Mitglied</option>
-						<option value="supporter">Supporter</option>			
+						<option value="supporter">Supporter</option>
 					</select>
 				</label>
 			<hr>
