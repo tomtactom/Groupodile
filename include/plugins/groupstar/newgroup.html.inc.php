@@ -49,7 +49,7 @@
 				</label>
 				<input type="checkbox" id="inputAccept" name="accept" required>
 				<label for="inputAccept">Ich habe die <a href="./privacy-policy" hreflang="<?php echo $options['short_language']; ?>" title="lese die Datenschutzerklärung" rel="nofollow" target="_blank">Datenschutzerklärung</a> und die <a href="./agbs" hreflang="<?php echo $options['short_language']; ?>" title="lese die Allgemeinen Geschäftsbedingungen" rel="nofollow" target="_blank">AGBs</a> gelesen</label><br><br>
-				<div class="g-recaptcha" data-callback="capcha_filled" data-expired-callback="capcha_expired" data-sitekey="6Lcjic0ZAAAAALs1unV8YNn4RCdz-Gd28nCCOC92"></div>
+				<div class="g-recaptcha" data-callback="capcha_filled" data-expired-callback="capcha_expired" data-sitekey="6LfWXm0UAAAAAKbRLqMVasA8lPm40aS6RCL-qTLi"></div>
 				<button type="submit">Gruppe veröffentlichen</button>
 			</form>
 			<script>
