@@ -23,6 +23,13 @@
 				<label for="inputKeywordsmain">Hauptschlagwörter:
 					<input type="text" id="inputKeywordsmain" name="keywordsmain" minlength="3" maxlength="255" value="WhatsApp Gruppen, WhatsApp Gruppen finden, Groupodile" required>
 				</label>
+				<a href="https://www.google.com/recaptcha" target="_blank" rel="external">google.com/recaptcha</a>
+				<label for="inputRecaptcha_sitekey">Websiteschlüssel Google reCAPTCHA:
+					<input type="text" id="inputRecaptcha_sitekey" name="recaptcha_sitekey" minlength="3" maxlength="255" required>
+				</label>
+				<label for="inputRecaptcha_secretkey">Geheimer Schlüssel Google reCAPTCHA:
+					<input type="text" id="inputRecaptcha_secretkey" name="recaptcha_secretkey" minlength="3" maxlength="255" required>
+				</label>
 				<label for="inputAdminemail">Adminstrator E-Mail:
 					<input type="email" id="inputAdminemail" name="adminemail" minlength="6" maxlength="255" required>
 				</label>

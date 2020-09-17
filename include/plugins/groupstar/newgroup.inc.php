@@ -62,7 +62,7 @@
 				$error = true;
 			}
 
-			$json = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LfWXm0UAAAAAK1XQRM5IlnnhNQdbX3z7wc-zj7l&response='.$_POST['g-recaptcha-response']), true);
+			$json = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$options['recaptcha_secretkey'].'&response='.$_POST['g-recaptcha-response']), true);
 			if(intval($json['success']) !== 1) {
 				$error_msg = 'Bitte bestätige dass du kein Roboter bist';
 				$error = true;

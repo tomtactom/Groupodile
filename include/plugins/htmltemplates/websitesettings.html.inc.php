@@ -1,20 +1,27 @@
 <form action="" method="post">
-		<label for="inputSiteurl">Website URL: 
+		<label for="inputSiteurl">Website URL:
 			<input type="url" id="inputSiteurl" name="siteurl" value="<?php echo $options['siteurl']; ?>" minlength="6" maxlength="255" required>
 		</label>
-		<label for="inputSitename">Website Name: 
+		<label for="inputSitename">Website Name:
 			<input type="text" id="inputSitename" name="sitename" value="<?php echo $options['sitename']; ?>" maxlength="255" pattern="[a-zA-Z0-9 ]+" required>
 		</label>
-		<label for="inputSitedescription">Website Beschreibung: 
+		<label for="inputSitedescription">Website Beschreibung:
 			<input type="text" id="inputSitedescription" name="sitedescription" value="<?php echo $options['sitedescription']; ?>" minlength="12" maxlength="255" required>
 		</label>
-		<label for="inputKeywordsmain">Hauptschlagwörter: 
+		<label for="inputKeywordsmain">Hauptschlagwörter:
 			<input type="text" id="inputKeywordsmain" name="keywordsmain" value="<?php echo $options['keywordsmain']; ?>" minlength="3" maxlength="255" required>
 		</label>
-		<label for="inputAdminemail">Adminstrator E-Mail: 
+		<a href="https://www.google.com/recaptcha" target="_blank" rel="external">google.com/recaptcha</a>
+		<label for="inputRecaptcha_sitekey">Websiteschlüssel Google reCAPTCHA:
+			<input type="text" id="inputRecaptcha_sitekey" name="recaptcha_sitekey" minlength="3" maxlength="255" required>
+		</label>
+		<label for="inputRecaptcha_secretkey">Geheimer Schlüssel Google reCAPTCHA:
+			<input type="text" id="inputRecaptcha_secretkey" name="recaptcha_secretkey" minlength="3" maxlength="255" required>
+		</label>
+		<label for="inputAdminemail">Adminstrator E-Mail:
 			<input type="email" id="inputAdminemail" name="adminemail" value="<?php echo $options['adminemail']; ?>" minlength="6" maxlength="255" required>
 		</label>
-		<label for="inputCountry">Land: 
+		<label for="inputCountry">Land:
 			<select id="inputCountry" name="country" required>
 				<option <?php echo $country_germany_select ?> value="germany">Deutschland</option>
 				<option <?php echo $country_austria_select ?> value="austria">Österreich</option>
@@ -29,13 +36,13 @@
 				<option <?php echo $country_ireland_select ?> value="ireland">Irland</option>
 			</select>
 		</label>
-		<label for="inputLanguage">Sprache: 
+		<label for="inputLanguage">Sprache:
 			<select id="inputLanguage" name="language" required>
 				<option <?php echo $language_german_select ?> value="german">Deutsch</option>
 				<option <?php echo $language_english_select ?> value="english">Englisch</option>
 			</select>
 		</label>
-		<label for="inputRobots">Suchmaschienen Indexierung: 
+		<label for="inputRobots">Suchmaschienen Indexierung:
 			<select id="inputRobots" name="robots" required>
 				<option <?php echo $robots_0_select; ?> value="0">In Suchmaschienen nicht Indexieren</option>
 				<option <?php echo $robots_1_select; ?> value="1">In Suchmaschienen Indexieren</option>
@@ -47,8 +54,8 @@
 				<option <?php echo $allowregister_1_select; ?> value="1">Registrieren erlauben</option>
 			</select>
 		</label>
-		
-		<label for="inputBackenddesign">Backend Design: 
+
+		<label for="inputBackenddesign">Backend Design:
 			<select id="inputBackenddesign" name="backenddesign" required>
 				<?php
 					$verzeichnis_design = "../backend/design/";
@@ -68,7 +75,7 @@
 				<option <?php if($options['backenddesign'] == 'none'){ echo 'selected'; } ?> value="none">Kein Design</option>
 			</select>
 		</label>
-		<label for="inputFrontenddesign">Frontend Design: 
+		<label for="inputFrontenddesign">Frontend Design:
 			<select id="inputFrontenddesign" name="frontenddesign" required>
 				<?php
 					$verzeichnis_frontenddesign = "../website/design/";
@@ -88,8 +95,8 @@
 				<option <?php if($options['frontenddesign'] == 'none'){ echo 'selected'; } ?> value="none">Kein Design</option>
 			</select>
 		</label>
-		
-		<label for="inputFont">Schriftart: 
+
+		<label for="inputFont">Schriftart:
 			<select id="inputFont" name="font" required>
 				<?php
 					$verzeichnis_font = "../include/database/fonts/";
@@ -109,70 +116,70 @@
 				<option <?php if($options['font'] == 'none'){ echo 'selected'; } ?> value="none">Keine Schriftart</option>
 			</select>
 		</label>
-	
-		<label for="inputFontname">Schriftname: 
+
+		<label for="inputFontname">Schriftname:
 			<input type="text" id="inputFontname" name="fontname" value="<?php echo $options['fontname']; ?>" pattern="[a-zA-Z ]+" maxlength="32">
 		</label>
-	
-		<label for="inputMaincolor">Hauptfarbe: 
+
+		<label for="inputMaincolor">Hauptfarbe:
 			<input type="color" id="inputMaincolor" name="maincolor" value="<?php echo $options['maincolor']; ?>" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
 		</label>
-		
-		<label for="inputMainfontcolor">Haupt Schriftfarbe: 
+
+		<label for="inputMainfontcolor">Haupt Schriftfarbe:
 			<input type="color" id="inputMainfontcolor" name="mainfontcolor" value="<?php echo $options['mainfontcolor']; ?>" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
 		</label>
-		
-		<label for="inputMainbackgroundcolor">Haupt Hintergrundfarbe: 
+
+		<label for="inputMainbackgroundcolor">Haupt Hintergrundfarbe:
 			<input type="color" id="inputMainbackgroundcolor" name="mainbackgroundcolor" value="<?php echo $options['mainbackgroundcolor']; ?>" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
 		</label>
-		
-		<label for="inputMainhovercolor">Haupt hover Farbe: 
+
+		<label for="inputMainhovercolor">Haupt hover Farbe:
 			<input type="color" id="inputMainhovercolor" name="mainhovercolor" value="<?php echo $options['mainhovercolor']; ?>" maxlength="7" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
 		</label>
 
-		<label for="inputAuthor">Author Name/Copyright: 
+		<label for="inputAuthor">Author Name/Copyright:
 			<input type="text" id="inputAuthor" name="author" value="<?php echo $options['author']; ?>" maxlength="255" pattern="[a-zA-Z0-9 ]+" required>
 		</label>
-		
-		<label for="inputMindestalter">Mindestalter: 
+
+		<label for="inputMindestalter">Mindestalter:
 			<input type="number" id="inputMindestalter" name="mindestalter" value="<?php echo $options['mindestalter']; ?>" pattern="/[0-9]$/" required>
 		</label>
-		
-		<label for="inputMainrole">Standartrolle: 
+
+		<label for="inputMainrole">Standartrolle:
 			<select id="inputMainrole" name="mainrole" required>
 				<option <?php echo $mainrole_user_select; ?> value="user">Benutzer</option>
 				<option <?php echo $mainrole_member_select; ?> value="member">Mitglied</option>
 				<?php if($user['role'] === 'adminstrator' || $setup == true) { ?>
 					<option <?php echo $mainrole_supporter_select; ?> value="supporter">Supporter</option>
-				<?php } ?>				
+				<?php } ?>
 			</select>
 		</label>
-		
+
 		<button type="submit" name="save_settings">Speichern</button>
 	</form>
 	Hochladen: <details>
 	<form action="" method="post" enctype="multipart/form-data">
-		<label for="inputZipbackend">Backenddesign hochladen: 
+		<label for="inputZipbackend">Backenddesign hochladen:
 			<input type="file" id="inputZipbackend" name="zip" accept=".zip" required>
 		</label>
 		<button type="submit" name="backenddesignupload">Hochladen</button>
 	</form>
 
 	<form action="" method="post" enctype="multipart/form-data">
-		<label for="inputZipfrontend">Frontenddesign hochladen: 
+		<label for="inputZipfrontend">Frontenddesign hochladen:
 			<input type="file" id="inputZipfrontend" name="zip" accept=".zip" required>
 		</label>
 		<button type="submit" name="frontenddesignupload">Hochladen</button>
 	</form>
 
 	<form action="" method="post" enctype="multipart/form-data">
-		<label for="inputFont">Schriftart hochladen: 
+		<label for="inputFont">Schriftart hochladen:
 			<input type="file" id="inputFont" name="font" accept=".woff, .woff2, .otp, .ttf, .ps" required>
 		</label>
 		<button type="submit" name="uploadfont">Hochladen</button>
 	</form>
 	</details>
-	
+
 	Löschen: <details>
 	<form action="" method="post">
 		<label for="inputDeletefrontend">

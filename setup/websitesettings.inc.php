@@ -24,14 +24,16 @@
 			$mindestalter = $_POST['mindestalter'];
 			$language = $_POST['language'];
 			$fontname = $_POST['fontname'];
+			$recaptcha_secretkey = $_POST['recaptcha_secretkey'];
+			$recaptcha_sitekey = $_POST['recaptcha_sitekey'];
 			$created = date('Y-m-d');
 		//Überprüfe ob alle Felder ausgefüllt worden sind
-		if(empty($siteurl) || empty($sitename) || empty($sitedescription) || empty($keywordsmain) || empty($adminemail) || empty($country) || empty($author) || empty($mainrole) || empty($backenddesign) || empty($maincolor) || empty($frontenddesign) || empty($mainfontcolor) || empty($mainbackgroundcolor) || empty($mainhovercolor) || empty($font) || empty($mindestalter) || empty($language)) {
+		if(empty($siteurl) || empty($sitename) || empty($sitedescription) || empty($keywordsmain) || empty($adminemail) || empty($country) || empty($author) || empty($mainrole) || empty($backenddesign) || empty($maincolor) || empty($frontenddesign) || empty($mainfontcolor) || empty($mainbackgroundcolor) || empty($mainhovercolor) || empty($font) || empty($mindestalter) || empty($language) || empty($recaptcha_secretkey) || empty($recaptcha_sitekey)) {
 			$error_msg = 'Bitte alle Felder ausfüllen';
 			$error = true;
 		}
 		//überprüfe die Minimale Stringlänge
-		if(strlen($siteurl) > 255 || strlen($sitename) > 255 || strlen($sitedescription) > 255 || strlen($keywordsmain) > 255 || strlen($adminemail) > 255 || strlen($country) > 255 || strlen($author) > 255 || strlen($mainrole) > 10 || strlen($backenddesign) > 255 || strlen($maincolor) != 7 || strlen($frontenddesign) > 255 || strlen($mainfontcolor) != 7 || strlen($mainbackgroundcolor) != 7 || strlen($mainhovercolor) != 7 || strlen($font) > 255 || strlen($mindestalter) > 3 || strlen($language) > 10 || strlen($fontname) > 255) {
+		if(strlen($siteurl) > 255 || strlen($sitename) > 255 || strlen($sitedescription) > 255 || strlen($keywordsmain) > 255 || strlen($adminemail) > 255 || strlen($country) > 255 || strlen($author) > 255 || strlen($mainrole) > 10 || strlen($backenddesign) > 255 || strlen($maincolor) != 7 || strlen($frontenddesign) > 255 || strlen($mainfontcolor) != 7 || strlen($mainbackgroundcolor) != 7 || strlen($mainhovercolor) != 7 || strlen($font) > 255 || strlen($mindestalter) > 3 || strlen($language) > 10 || strlen($fontname) > 255 || strlen($recaptcha_secretkey) > 255 || strlen($recaptcha_sitekey) > 255) {
 			$error_msg = 'Mindestens eine Eingabe war ungültig! Bitte maximal 255 Zeichen pro Feld eingeben.';
 			$error = true;
 		}
@@ -46,7 +48,7 @@
 			$error = true;
 		}
 		$siteurl = trim($siteurl, '/');
-		
+
 		if(!filter_var($adminemail, FILTER_VALIDATE_EMAIL)) {
 			$error_msg = 'Bitte eine gültige Administrator E-Mail-Adresse eingeben';
 			$error = true;
@@ -80,90 +82,98 @@
 			$name = 'sitename';
 			$value = $sitename;
 			$stmt->execute();
-			
+
 			$name = 'sitedescription';
 			$value = $sitedescription;
 			$stmt->execute();
-			
+
 			$name = 'keywordsmain';
 			$value = $keywordsmain;
 			$stmt->execute();
-			
+
 			$name = 'adminemail';
 			$value = $adminemail;
 			$stmt->execute();
-			
+
 			$name = 'country';
 			$value = $country;
 			$stmt->execute();
-			
+
 			$name = 'robots';
 			$value = $robots;
 			$stmt->execute();
-			
+
 			$name = 'allowregister';
 			$value = $allowregister;
 			$stmt->execute();
-			
+
 			$name = 'author';
 			$value = $author;
 			$stmt->execute();
-			
+
 			$name = 'mainrole';
 			$value = $mainrole;
 			$stmt->execute();
-			
+
 			$name = 'backenddesign';
 			$value = $backenddesign;
 			$stmt->execute();
-			
+
 			$name = 'frontenddesign';
 			$value = $frontenddesign;
 			$stmt->execute();
-			
+
 			$name = 'maincolor';
 			$value = $maincolor;
 			$stmt->execute();
-			
+
 			$name = 'mainfontcolor';
 			$value = $mainfontcolor;
 			$stmt->execute();
-			
+
 			$name = 'mainbackgroundcolor';
 			$value = $mainbackgroundcolor;
 			$stmt->execute();
-			
+
 			$name = 'mainhovercolor';
 			$value = $mainhovercolor;
 			$stmt->execute();
-			
+
 			$name = 'font';
 			$value = $font;
 			$stmt->execute();
-			
+
 			$name = 'fontname';
 			$value = $fontname;
 			$stmt->execute();
-			
+
 			$name = 'mindestalter';
 			$value = $mindestalter;
 			$stmt->execute();
-			
+
 			$name = 'language';
 			$value = $language;
 			$stmt->execute();
-			
+
+			$name = 'recaptcha_sitekey';
+			$value = $recaptcha_sitekey;
+			$stmt->execute();
+
+			$name = 'recaptcha_secretkey';
+			$value = $recaptcha_secretkey;
+			$stmt->execute();
+
 			$name = 'created';
 			$value = $created;
 			$stmt->execute();
 
 			$stmt->close();
-			
+
 			$success_msg = "Alle Felder wurden erfolgreich gespeichert.";
 			$goToNextStep = true;
 		}
 	}
-	
+
 	// show error
 	include("templates/websitesettings.inc.php");
 ?>

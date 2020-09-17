@@ -95,4 +95,6 @@ INSERT IGNORE INTO `option` (`option_id`, `option_name`, `option_value`) VALUES
 	(19, 'author', ''),
 	(20, 'language', ''),
 	(21, 'version', '1.0'),
-	(22, 'fontname', '');
+	(22, 'fontname', ''),
+  (23, 'recaptcha_secretkey', ''),
+  (24, 'recaptcha_sitekey', '');
