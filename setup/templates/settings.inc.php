@@ -10,31 +10,31 @@
 					display: block;
 				}
 			</style>
-				<label for="inputUsername">Benutzername:* 
-					<input type="text" id="inputUsername" size="40" minlength="3" maxlength="32" name="username" placeholder="Benutzername" pattern="[A-Za-z0-9/_-]+" required>
+				<label for="inputUsername">Benutzername:*
+					<input type="text" id="inputUsername" size="40" minlength="3" maxlength="32" name="username" placeholder="Benutzername" value="Benutzername" pattern="[A-Za-z0-9/_-]+" required>
 				</label>
-				<label for="inputFirstname">Vorname:* 
-					<input type="text" id="inputFirstname" size="40" minlength="3" maxlength="255" name="vorname" placeholder="Vorname" pattern="[a-zA-Z ]+" required>
+				<label for="inputFirstname">Vorname:*
+					<input type="text" id="inputFirstname" size="40" minlength="3" maxlength="255" name="vorname" placeholder="Vorname" value="Vorname" pattern="[a-zA-Z ]+" required>
 				</label>
-				<label for="inputLastname">Nachname:* 
-					<input type="text" id="inputLastname" size="40" minlength="3" maxlength="255" name="nachname" placeholder="Nachname" pattern="[a-zA-Z]+" required>
+				<label for="inputLastname">Nachname:*
+					<input type="text" id="inputLastname" size="40" minlength="3" maxlength="255" name="nachname" placeholder="Nachname" value="Nachname" pattern="[a-zA-Z]+" required>
 				</label>
-				<label for="inputEmail">E-Mail:* 
-					<input type="email" id="inputEmail" size="40" maxlength="250" name="email" placeholder="E-Mail" required>
+				<label for="inputEmail">E-Mail:*
+					<input type="email" id="inputEmail" size="40" maxlength="250" name="email" placeholder="E-Mail" value="emailtest@tonline.de" required>
 				</label>
-				<label for="inputPassword">Passwort:* 
-					<input type="password" id="inputPassword" size="40" minlength="8" maxlength="250" name="passwort" placeholder="Passwort" required>
+				<label for="inputPassword">Passwort:*
+					<input type="password" id="inputPassword" size="40" minlength="8" maxlength="250" name="passwort" placeholder="Passwort" value="test_#1" required>
 				</label>
-				<label for="inputPassword2">Passwort wiederholen:* 
-					<input type="password" id="inputPassword2" size="40" minlenght="8" maxlength="250" name="passwort2" placeholder="Passwort wiederholen" required>
+				<label for="inputPassword2">Passwort wiederholen:*
+					<input type="password" id="inputPassword2" size="40" minlenght="8" maxlength="250" name="passwort2" placeholder="Passwort wiederholen" value="test_#1" required>
 				</label>
-				<label for="inputBiography">Biografie: 
+				<label for="inputBiography">Biografie:
 					<textarea id="inputBiography" maxlength="250" name="biography" placeholder="Biografie"></textarea>
 				</label>
-				<label for="inputBirthday">Geburtsdatum:* 
+				<label for="inputBirthday">Geburtsdatum:*
 					<input type="date" id="inputBirthday" maxlength="10" name="birthday" placeholder="Geburtsdatum" required>
 				</label>
-				<label for="gender">Geschlecht:* 
+				<label for="gender">Geschlecht:*
 					<select name="gender" id="gender">
 						<option value="female">Weiblich</option>
 						<option value="male">Männlich</option>

@@ -19,7 +19,7 @@
 		}
 
 		if(empty($vorname) || empty($nachname) || empty($email) || empty($birthday) || empty($gender) || empty($role) || empty($username)) {
-			$error_msg = 'Bitte alle Felder mit * ausfüllen'.$vorname.$nachname.$email.$birthday.$gender.$role.$username;
+			$error_msg = 'Bitte alle Felder mit * ausfüllen';
 			$error = true;
 		}
 		if(strlen($vorname) > 32 || strlen($nachname) > 32 || strlen($email) > 255 || strlen($username) > 32 || (!empty($biography) && strlen($biography) > 255)) {
