@@ -1,5 +1,5 @@
 	<footer>
-		<br>&copy;<?php echo date('Y'); ?> LupusGUI
+		<br>&copy;<?php echo date('Y'); ?> Groupodile
 	</footer>
 </body>
 </html>
