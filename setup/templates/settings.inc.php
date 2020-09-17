@@ -32,7 +32,7 @@
 					<textarea id="inputBiography" maxlength="250" name="biography" placeholder="Biografie"><?php echo $_POST['biography']; ?></textarea>
 				</label>
 				<label for="inputBirthday">Geburtsdatum:*
-					<input type="date" id="inputBirthday" maxlength="10" name="birthday" placeholder="Geburtsdatum" value="birthday" required>
+					<input type="date" id="inputBirthday" maxlength="10" name="birthday" placeholder="Geburtsdatum" value="<?php echo $_POST['birthday']; ?>" required>
 				</label>
 				<label for="gender">Geschlecht:*
 					<select name="gender" id="gender">
