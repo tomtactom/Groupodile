@@ -12,7 +12,7 @@
 				}
 			</style>
 				<label for="inputSiteurl">Website URL:
-					<input type="url" id="inputSiteurl" name="siteurl" minlength="12" maxlength="255" required>
+					<input type="url" id="inputSiteurl" name="siteurl" minlength="12" maxlength="255" value="<?php echo $_SERVER['HTTP_HOST'].explode('/setup')[0]; ?>" required>
 				</label>
 				<label for="inputSitename">Website Name:
 					<input type="text" id="inputSitename" name="sitename" maxlength="255" value="Groupodile" required>
