@@ -119,8 +119,4 @@
 	if (isset($description)) {
 		$options['sitedescription'] = $description;
 	}
-	/* //kommt erstmal weg
-	if (isset($_GET['save'])) {
-		header('Location: '.$options['siteurl'].trim($_SERVER['PHP_SELF'], '.php'));
-	}*/
 ?>

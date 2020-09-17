@@ -39,7 +39,7 @@
 				$error_msg = 'Bitte wähle ein Mindestalter aus';
 				$error = true;
 			}
-			
+
 			if($_POST['accept'] != true) {
 				$error_msg = 'Bitte akzeptiere unsere Datenschutzerklärung und unsere AGBs';
 				$error = true;
@@ -62,12 +62,12 @@
 				$error = true;
 			}
 
-			$json = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LfWXm0UAAAAAK1XQRM5IlnnhNQdbX3z7wc-zj7l&response='.$_POST['g-recaptcha-response']), true);
+			$json = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6Lcjic0ZAAAAADpt2RYv1DQm7Gy2vtBg7PMl-nCD&response='.$_POST['g-recaptcha-response']), true);
 			if(intval($json['success']) !== 1) {
-				$error_msg = 'Bitte bestätige dass du kein Roboter bist';	
+				$error_msg = 'Bitte bestätige dass du kein Roboter bist';
 				$error = true;
 			}
-			
+
 			if(!isset($error)) {
 				$title = htmlspecialchars($_POST['groupname']);
 				$description = htmlspecialchars($_POST['description']);
