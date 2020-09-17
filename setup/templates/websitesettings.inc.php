@@ -12,7 +12,7 @@
 				}
 			</style>
 				<label for="inputSiteurl">Website URL:
-					<input type="url" id="inputSiteurl" name="siteurl" minlength="12" maxlength="255" value="<?php echo $_SERVER['HTTP_HOST'].explode('/setup')[0]; ?>" required>
+					<input type="url" id="inputSiteurl" name="siteurl" minlength="12" maxlength="255" value="<?php echo $_SERVER['HTTP_REFERER']; ?>" required>
 				</label>
 				<label for="inputSitename">Website Name:
 					<input type="text" id="inputSitename" name="sitename" maxlength="255" value="Groupodile" required>
@@ -50,7 +50,7 @@
 				<label for="inputRobots">Suchmaschienen Indexierung:
 					<select id="inputRobots" name="robots" required>
 						<option value="0">In Suchmaschienen nicht Indexieren</option>
-						<option value="1">In Suchmaschienen Indexieren</option>
+						<option value="1" selected>In Suchmaschienen Indexieren</option>
 					</select>
 				</label>
 				<label for="inputAllowregister">Registrierung im Frontend
@@ -147,7 +147,7 @@
 				</label>
 
 				<label for="inputMindestalter">Mindestalter:
-					<input type="number" id="inputMindestalter" name="mindestalter" pattern="/[0-9]$/" required>
+					<input type="number" id="inputMindestalter" name="mindestalter" pattern="/[0-9]$/" value="16" required>
 				</label>
 
 				<label for="inputMainrole">Standartrolle:
