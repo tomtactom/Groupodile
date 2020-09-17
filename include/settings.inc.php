@@ -4,10 +4,10 @@
 		if (file_exists($_SERVER['DOCUMENT_ROOT'].'/setup')) {
 			header('Location: /setup');
 		} else {
-			echo 'Error! Deine Datenbankdaten sind kaputt';
+			echo 'Error! Deine Datenbankzugangsdaten sind kaputt';
 		}
 	}
-	
+
 	// Liest `option` Daten aus der Datenbank aus
 	$result = $db->query("SELECT option_name, option_value FROM option");
 	$options = [];
@@ -16,7 +16,7 @@
 		@$options[$row['option_name']] = $row['option_value'];
 		@$options_time[$row['option_name']] = $row['updated_at'];
 	}
-	
+
 	//stellt lehre Felder auf 0
 	if ($options['robots'] === '1') {
 		$options['robots'] = true;
@@ -28,7 +28,7 @@
 	} else {
 		$showFormular = "1";
 	}
-	
+
     //Stellt ein ob die Seite von Suchmaschienen erfasst werden soll oder nicht
     if ($options['robots'] == false) {
 		$options['robots'] = 'noindex,nofollow';
@@ -44,7 +44,7 @@
 	} else {
 		$options['siteurl'] = getSiteURL();
 	}
-    	
+
 	//Kürzt die Domain so, dass vorne das "http://" oder das "https://" weggenommen wird
 	if (!empty($options['siteurl'])) {
 		$options['siteurl_trim'] = str_replace('http://', "", $options['siteurl']);
@@ -75,27 +75,27 @@
 			}
 		}
 	}
-	
+
 	//Plugin Pfad
 	if (!isset($options['pluginpath'])) {
 		$options['pluginpath'] = $_SERVER['DOCUMENT_ROOT'].'/include/plugins/';
 	}
-	
+
 	//HTML-Plugin Pfad
 	if (!isset($options['pluginhtmlpath'])) {
 		$options['pluginhtmlpath'] = $_SERVER['DOCUMENT_ROOT'].'/include/plugins/htmltemplates/';
 	}
-	
+
 	//CMS-Plugin Pfad
 	if (!isset($options['plugincmspath'])) {
 		$options['plugincmspath'] = $_SERVER['DOCUMENT_ROOT'].'/include/plugins/cms/';
 	}
-	
+
 	//Statistik-Plugin Pfad
 	if (!isset($options['pluginstatisticpath'])) {
 		$options['pluginstatisticpath'] = $_SERVER['DOCUMENT_ROOT'].'/include/plugins/statistic/';
 	}
-	
+
 	//Sprache Kurz
 	if (isset($options['language'])) {
 		if ($options['language'] === 'german') {
@@ -109,15 +109,15 @@
 			$options['short_language'] = 'en';
 		}
 	}
-	
+
 	//Keywords richtig anzeigen lassen
 	if (isset($keywords)) {
 		$options['keywordsmain'] = $options['keywordsmain'].', '.$keywords;
 	}
-	
+
 	//Beschreibung richtig anzeigen lassen
 	if (isset($description)) {
-		$options['sitedescription'] = $description;	
+		$options['sitedescription'] = $description;
 	}
 	/* //kommt erstmal weg
 	if (isset($_GET['save'])) {
