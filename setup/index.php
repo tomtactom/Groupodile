@@ -7,7 +7,6 @@
 
 	if(!file_exists("../include/database/database.php")) {
 		file_put_contents('../include/database/database.php', '');
-		echo '<br><br>.<br><br>.<br>Halöl';
 	}
 
 	//Zeige nächte schritte
