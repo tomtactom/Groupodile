@@ -5,8 +5,8 @@
 		header("Location: ../setup");
 	}
 
-	if(!file_exists("include/database/database.php")) {
-		file_put_contents('include/database/database.php', '');
+	if(!file_exists("/include/database/database.php")) {
+		file_put_contents('/include/database/database.php', '');
 	}
 
 	//Zeige nächte schritte
