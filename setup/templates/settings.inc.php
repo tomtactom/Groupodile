@@ -54,9 +54,6 @@
 					<input type="hidden" name="nextStep" value="settings">
 					<button type="submit" name="register" value="1">Account erstellen</button>
 				<?php } ?>
-				<pre
-				<?php print_r($_POST) ?>
-			</pre>
 			</form>
 		</section>
 	</article>
