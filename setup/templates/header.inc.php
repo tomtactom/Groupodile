@@ -1,6 +1,6 @@
 <body>
 	<header>
-		<img src="../include/images/logo.svg" height="70px">
+		<img src="../include/images/ico.ico" height="70px">
 		<nav>
 			<a></a>
 			<ul>
@@ -16,4 +16,3 @@
 			</ul>
 		</nav>
 	</header>
-	
